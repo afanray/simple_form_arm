@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_form_arm/src/screens/form_builder/provider/form_builder_provider.dart';

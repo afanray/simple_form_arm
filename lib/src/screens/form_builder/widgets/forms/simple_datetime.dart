@@ -52,7 +52,7 @@ class _SimpleDateTime extends StatelessWidget {
                     builder: (context, value, child) {
                       return CustomDropdown(
                         onChanged: (val) {
-                          print(val);
+                          // print(val);
                         },
                         onTap: () async {
                           DateTime tempDate = await selectDate(context);
