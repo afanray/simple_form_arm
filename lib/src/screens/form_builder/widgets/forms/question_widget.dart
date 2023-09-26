@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:simple_form_builder/src/screens/form_builder/page/form_builder.dart';
-import 'package:simple_form_builder/src/screens/form_builder/provider/form_builder_provider.dart';
-import 'package:simple_form_builder/src/screens/form_builder/widgets/custom_dropdown.dart';
-import 'package:simple_form_builder/src/screens/form_builder/widgets/simple_icon_container.dart';
-import 'package:simple_form_builder/src/shared/questionsModel.dart';
-
-import 'package:simple_form_builder/src/shared/constant.dart';
-import 'package:simple_form_builder/src/shared/utils/file_upload.dart';
+import 'package:simple_form_arm/form_builder.dart';
+import 'package:simple_form_arm/src/screens/form_builder/provider/form_builder_provider.dart';
+import 'package:simple_form_arm/src/screens/form_builder/widgets/custom_dropdown.dart';
+import 'package:simple_form_arm/src/screens/form_builder/widgets/simple_icon_container.dart';
+import 'package:simple_form_arm/src/shared/constant.dart';
+import 'package:simple_form_arm/src/shared/questionsModel.dart';
+import 'package:simple_form_arm/src/shared/utils/file_upload.dart';
 
 part 'simple_checkbox.dart';
 part 'simple_date.dart';

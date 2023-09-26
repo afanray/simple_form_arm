@@ -51,7 +51,6 @@ void fileUpload({
                     await imagefile.readAsBytes(); //convert to bytes
                 String base64string =
                     base64.encode(imagebytes); //convert bytes to base64 string
-                print(base64string);
 
                 // List<File> selectedFiles =
                 //     result.paths.map((path) => File(path ?? '')).toList();
