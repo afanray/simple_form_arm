@@ -1,7 +1,7 @@
 part of 'question_widget.dart';
 
 class _SimpleDropdown extends StatelessWidget {
-  _SimpleDropdown({
+  const _SimpleDropdown({
     Key? key,
     required this.questions,
     required this.showIndex,
@@ -28,12 +28,12 @@ class _SimpleDropdown extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(left: 16.0, top: 16),
+          padding: const EdgeInsets.only(left: 16.0, top: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               showIcon ? IconContainer(icon: dropdownImage) : Container(),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: Text(
                     "${showIndex ? "${checklistModel!.questions!.indexOf(questions) + 1}. " : ""}${questions.question}"),
@@ -60,9 +60,9 @@ class _SimpleDropdown extends StatelessWidget {
               child: Consumer<FormBuilderProvider>(
                 builder: ((context, value, child) {
                   return DropdownButton(
-                    underline: SizedBox(),
+                    underline: const SizedBox(),
                     hint: questions.content == null
-                        ? Text('Select option')
+                        ? const Text('Select option')
                         : Text(
                             questions.content,
                             style: TextStyle(
@@ -73,7 +73,7 @@ class _SimpleDropdown extends StatelessWidget {
                           ),
                     isExpanded: true,
                     iconSize: 30.0,
-                    style: TextStyle(color: Colors.grey),
+                    style: const TextStyle(color: Colors.grey),
                     items: questions.answerOptions!.map(
                       (val) {
                         return DropdownMenuItem<String>(

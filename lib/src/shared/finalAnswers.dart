@@ -6,23 +6,23 @@ class FinalAnswerModel {
 
   FinalAnswerModel.fromJson(Map<String, dynamic> json) {
     coordinate = json['coordinate'] != null
-        ? new FinalCoordinate.fromJson(json['coordinate'])
+        ? FinalCoordinate.fromJson(json['coordinate'])
         : null;
     if (json['answers'] != null) {
       answers = <FinalAnswers>[];
       json['answers'].forEach((v) {
-        answers!.add(new FinalAnswers.fromJson(v));
+        answers!.add(FinalAnswers.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.coordinate != null) {
-      data['coordinate'] = this.coordinate!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (coordinate != null) {
+      data['coordinate'] = coordinate!.toJson();
     }
-    if (this.answers != null) {
-      data['answers'] = this.answers!.map((v) => v.toJson()).toList();
+    if (answers != null) {
+      data['answers'] = answers!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -54,13 +54,13 @@ class FinalCoordinate {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['provinsi'] = this.provinsi;
-    data['kabkot'] = this.kabkot;
-    data['kecamatan'] = this.kecamatan;
-    data['deskel'] = this.deskel;
-    data['lat'] = this.lat;
-    data['lng'] = this.lng;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['provinsi'] = provinsi;
+    data['kabkot'] = kabkot;
+    data['kecamatan'] = kecamatan;
+    data['deskel'] = deskel;
+    data['lat'] = lat;
+    data['lng'] = lng;
     return data;
   }
 }
@@ -79,10 +79,10 @@ class FinalAnswers {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['questionare_id'] = this.questionareId;
-    data['question_type'] = this.questionType;
-    data['content'] = this.content;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['questionare_id'] = questionareId;
+    data['question_type'] = questionType;
+    data['content'] = content;
     return data;
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-DateFormat dateFormater = new DateFormat('dd-MM-yyyy');
+DateFormat dateFormater = DateFormat('dd-MM-yyyy');
 
 double screenWidth({var context, double? mulBy}) {
   return MediaQuery.of(context).size.width * mulBy!;
@@ -30,7 +30,7 @@ selectTime(BuildContext context) async {
 }
 
 String formatTimeOfDay(TimeOfDay tod) {
-  final now = new DateTime.now();
+  final now = DateTime.now();
   final dt = DateTime(now.year, now.month, now.day, tod.hour, tod.minute);
   final format = DateFormat.jm(); //"6:00 AM"
   return format.format(dt);

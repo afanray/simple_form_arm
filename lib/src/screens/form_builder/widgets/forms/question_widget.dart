@@ -8,7 +8,7 @@ import 'package:simple_form_arm/src/shared/constant.dart';
 import 'package:simple_form_arm/src/shared/questionsModel.dart';
 import 'package:simple_form_arm/src/shared/utils/file_upload.dart';
 
-part 'simple_checkbox.dart';
+// part 'simple_checkbox.dart';
 part 'simple_date.dart';
 part 'simple_datetime.dart';
 part 'simple_dropdown.dart';
@@ -87,17 +87,6 @@ class QuestionWidget extends StatelessWidget {
           dropdownImage: widget.dropdownImage,
           descriptionTextDecoration: widget.descriptionTextDecoration,
         );
-      case "checkbox":
-        return _SimpleCheckbox(
-          questions: questions,
-          checklistModel: checklistModel,
-          showIndex: widget.showIndex,
-          checkboxImage: widget.checkboxImage,
-          remarkImage: widget.remarkImage,
-          index: widget.index,
-          showIcon: remarks,
-          descriptionTextDecoration: widget.descriptionTextDecoration,
-        );
       case "datetime":
         return _SimpleDateTime(
           questions: questions,
@@ -167,7 +156,7 @@ class QuestionWidget extends StatelessWidget {
         );
 
       default:
-        return SizedBox.shrink();
+        return const SizedBox.shrink();
     }
   }
 }

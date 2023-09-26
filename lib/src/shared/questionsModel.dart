@@ -13,8 +13,8 @@ class QuestionsModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data["questionare"] = this.questions == null
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["questionare"] = questions == null
         ? []
         : List<dynamic>.from(questions!.map((x) => x.toJson()));
     return data;
@@ -31,8 +31,8 @@ class RepeatEnds {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['value'] = this.value;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['value'] = value;
     return data;
   }
 }
@@ -70,10 +70,10 @@ class Question {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data["questionare_id"] = this.id;
-    data["question_type"] = this.questionType;
-    data['content'] = this.content.toString();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["questionare_id"] = id;
+    data["question_type"] = questionType;
+    data['content'] = content.toString();
 
     return data;
   }

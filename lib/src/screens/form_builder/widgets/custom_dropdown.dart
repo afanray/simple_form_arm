@@ -28,22 +28,22 @@ class CustomDropdown extends StatelessWidget {
     return Row(
       children: <Widget>[
         showImage
-            ? Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
+            ? const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: SizedBox(
                   height: 25,
                   width: 25,
                 ),
               )
-            : SizedBox.shrink(),
+            : const SizedBox.shrink(),
         Stack(
           children: [
-            Container(
+            SizedBox(
               width: width ?? screenWidth(context: context, mulBy: 0.7),
               child: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: DropdownButton(
-                  icon: RotatedBox(
+                  icon: const RotatedBox(
                     quarterTurns: 3,
                     child: Icon(
                       Icons.arrow_back_ios_rounded,
@@ -56,14 +56,14 @@ class CustomDropdown extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       isRequired
-                          ? Text(
+                          ? const Text(
                               "* ",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.red,
                               ),
                             )
-                          : Text(""),
+                          : const Text(""),
                       Text(
                         title!,
                         style: TextStyle(
@@ -108,10 +108,10 @@ class CustomDropdown extends StatelessWidget {
               ),
             ),
             onTap == null
-                ? SizedBox.shrink()
+                ? const SizedBox.shrink()
                 : InkWell(
                     onTap: () => onTap!(),
-                    child: Container(
+                    child: SizedBox(
                       width: width ??
                           screenWidth(
                             context: context,

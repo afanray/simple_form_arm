@@ -28,12 +28,12 @@ class _SimpleDate extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(left: 16.0, top: 16),
+          padding: const EdgeInsets.only(left: 16.0, top: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               showIcon ? IconContainer(icon: dateImage) : Container(),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: Text(
                     "${showIndex ? "${checklistModel!.questions!.indexOf(questions) + 1}. " : ""}${questions.question}"),
@@ -52,7 +52,7 @@ class _SimpleDate extends StatelessWidget {
                     builder: (context, value, child) {
                       return CustomDropdown(
                         onChanged: (val) {
-                          print(val);
+                          // print(val);
                         },
                         onTap: () async {
                           DateTime tempDate = await selectDate(context);

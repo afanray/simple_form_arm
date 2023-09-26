@@ -8,11 +8,11 @@ class IconContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (icon == null) {
-      return SizedBox.shrink();
+      return const SizedBox.shrink();
     }
 
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Image.asset(
         icon!,
         height: 20,

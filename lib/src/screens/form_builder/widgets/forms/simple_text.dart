@@ -32,12 +32,12 @@ class _SimpleText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(left: 16.0, top: 16),
+          padding: const EdgeInsets.only(left: 16.0, top: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               showIcon ? IconContainer(icon: textImage) : Container(),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: Text(
                     "${showIndex ? "${checklistModel!.questions!.indexOf(questions) + 1}. " : ""}${questions.question}"),
@@ -50,10 +50,10 @@ class _SimpleText extends StatelessWidget {
             vertical: 8.0,
             horizontal: 16,
           ),
-          child: Container(
+          child: SizedBox(
             width: screenWidth(
                 context: context,
-                mulBy: textFieldWidth == null ? 0.9 : textFieldWidth),
+                mulBy: textFieldWidth ?? 0.9),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.grey[300],
@@ -71,11 +71,11 @@ class _SimpleText extends StatelessWidget {
                           index: index,
                         );
                       },
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                       ),
                       decoration: textfieldDecoration ??
-                          InputDecoration.collapsed(
+                          const InputDecoration.collapsed(
                             hintText: "Enter text here",
                             hintStyle: TextStyle(
                               fontWeight: FontWeight.normal,

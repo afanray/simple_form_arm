@@ -33,6 +33,7 @@ class FormBuilder extends StatefulWidget {
   final TextStyle? descriptionTextDecoration;
 
   const FormBuilder({
+    super.key,
     required this.initialData,
     required this.index,
     this.textfieldDecoration, //adds inputdecoration to textfields
@@ -80,9 +81,9 @@ class _FormBuilderState extends State<FormBuilder> {
                 widget.title != null
                     ? Text(
                         widget.title!,
-                        style: widget.titleStyle ?? TextStyle(),
+                        style: widget.titleStyle ?? const TextStyle(),
                       )
-                    : SizedBox.shrink(),
+                    : const SizedBox.shrink(),
                 ...checklistModel!.questions!
                     .map((question) => QuestionWidget(
                           questions: question,
@@ -91,16 +92,16 @@ class _FormBuilderState extends State<FormBuilder> {
                           checklistModel: checklistModel,
                         ))
                     .toList(),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Row(
                     children: [
                       InkWell(
                         onTap: () {
-                          print("Back");
+                          // print("Back");
                         },
                         child: Container(
                           height: 50,
@@ -113,7 +114,7 @@ class _FormBuilderState extends State<FormBuilder> {
                             child: Text(
                               widget.submitButtonText ?? "Cancel",
                               style: widget.submitTextDecoration ??
-                                  TextStyle(color: Colors.white),
+                                  const TextStyle(color: Colors.white),
                             ),
                           ),
                         ),
@@ -140,7 +141,7 @@ class _FormBuilderState extends State<FormBuilder> {
                             child: Text(
                               widget.submitButtonText ?? "Submit",
                               style: widget.submitTextDecoration ??
-                                  TextStyle(color: Colors.white),
+                                  const TextStyle(color: Colors.white),
                             ),
                           ),
                         ),

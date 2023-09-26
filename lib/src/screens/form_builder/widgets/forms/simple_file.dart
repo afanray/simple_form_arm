@@ -29,8 +29,8 @@ class _SimpleFile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 16.0, top: 16),
-              child: Container(
+              padding: const EdgeInsets.only(left: 16.0, top: 16),
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: Text(
                     "${showIndex ? "${checklistModel!.questions!.indexOf(questions) + 1}. " : ""}${questions.question}"),
@@ -76,8 +76,8 @@ class _SimpleFile extends StatelessWidget {
                         ),
                       ),
                       questions.content != null
-                          ? Padding(
-                              padding: const EdgeInsets.all(8.0),
+                          ? const Padding(
+                              padding: EdgeInsets.all(8.0),
                               child: CircleAvatar(
                                 backgroundColor: Colors.red,
                                 radius: 15,
@@ -87,7 +87,7 @@ class _SimpleFile extends StatelessWidget {
                                 ),
                               ),
                             )
-                          : SizedBox.shrink(),
+                          : const SizedBox.shrink(),
                     ],
                   ),
                 ),
