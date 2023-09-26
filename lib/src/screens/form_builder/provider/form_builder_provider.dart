@@ -1,0 +1,59 @@
+import 'package:flutter/cupertino.dart';
+// import 'package:simple_form_builder/src/shared/checklistModel2.dart';
+
+import '../../../shared/questionsModel.dart';
+
+class FormBuilderProvider extends ChangeNotifier {
+  Map<String, dynamic> initial;
+
+  QuestionsModel? questionsModel;
+  // ChecklistModel? checklistModel;
+
+  FormBuilderProvider({required this.initial}) {
+    questionsModel = QuestionsModel.fromJson(initial);
+  }
+
+  void setAnswer(
+      {required Question questions, Object? value, required int index}) {
+    final idx = questionsModel?.questions?.indexOf(questions);
+    final question = questionsModel?.questions?[idx!];
+    question?.content = value;
+
+    // print(question?.answer);
+
+    notifyListeners();
+  }
+
+  // void setMultiAnswer(
+  //     {required Question questions, Object? value, required int index}) {
+  //   final idx = questionsModel?.questions?.indexOf(questions);
+  //   final question = questionsModel?.questions?[idx!];
+  //   question?.content = ;
+
+  // print(question?.answer);
+
+  //   notifyListeners();
+  // }
+
+  // void setRemark(Answer questions, String? value, int index) {
+  //   final idx = questionsModel?.answers?.indexOf(questions);
+  //   final question = questionsModel?.answers?[idx!];
+  //   question?.remarkData = value;
+
+  //   notifyListeners();
+  // }
+
+  void setCheckboxAnswers({
+    required Question questions,
+    bool? input,
+    required String checked,
+    required int index,
+  }) {
+    final idx = questionsModel?.questions?.indexOf(questions);
+    final question = questionsModel?.questions?[idx!];
+    question?.content[questions.answerOptions!
+        .indexOf(questions.answerOptions!.elementAt(index))] = input;
+
+    notifyListeners();
+  }
+}
