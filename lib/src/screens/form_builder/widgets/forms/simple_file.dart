@@ -57,64 +57,31 @@ class _SimpleFile extends StatelessWidget {
                         child: Consumer<FormBuilderProvider>(
                           builder: (context, value, child) {
                             return TextButton(
-                              onPressed: () => fileUpload(
-                                  context: context,
-                                  files: (files) {
-                                    value.setAnswer(
-                                      questions: questions,
-                                      value: files,
-                                      index: index,
-                                    );
-                                  }),
-                              child: Icon(
-                                Icons.add_a_photo_outlined,
-                                color: Colors.grey[500],
-                                size: 70,
-                              ),
-                            );
+                                onPressed: () => fileUpload(
+                                    context: context,
+                                    files: (files) {
+                                      value.setAnswer(
+                                        questions: questions,
+                                        value: files,
+                                        index: index,
+                                      );
+                                    }),
+                                child: (questions.content == null)
+                                    ? Icon(
+                                        Icons.add_a_photo_rounded,
+                                        color: Colors.blueGrey,
+                                        size: 35,
+                                      )
+                                    : Image.memory(
+                                        base64Decode(questions.content),
+                                        fit: BoxFit.fitWidth,
+                                      ));
                           },
                         ),
                       ),
-                      questions.content != null
-                          ? const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: CircleAvatar(
-                                backgroundColor: Colors.red,
-                                radius: 15,
-                                child: Icon(
-                                  Icons.close,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            )
-                          : const SizedBox.shrink(),
                     ],
                   ),
                 ),
-                // Center(
-                //   child: Consumer<FormBuilderProvider>(
-                //     builder: (context, value, child) {
-                //       return TextButton(
-                //         onPressed: () => fileUpload(
-                //             context: context,
-                //             files: (files) {
-                //               value.setAnswer(
-                //                 questions: questions,
-                //                 value: files,
-                //                 index: index,
-                //               );
-                //             }),
-                //         child: Text(
-                //           "Upload",
-                //           style: TextStyle(
-                //             color: Colors.black,
-                //             decoration: TextDecoration.underline,
-                //           ),
-                //         ),
-                //       );
-                //     },
-                //   ),
-                // )
               ]),
             ],
           ),

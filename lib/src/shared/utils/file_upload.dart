@@ -17,7 +17,7 @@ void fileUpload({
         mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
-            title: const Text('Pick from Gallery'),
+            title: const Text('Ambil dari galeri'),
             onTap: () async {
               Navigator.of(context).pop();
               FilePickerResult? result = await FilePicker.platform.pickFiles();
@@ -38,7 +38,7 @@ void fileUpload({
             },
           ),
           ListTile(
-            title: const Text('Pick from Camera'),
+            title: const Text('Ambil dari kamera'),
             onTap: () async {
               Navigator.of(context).pop();
               // Pick an icon

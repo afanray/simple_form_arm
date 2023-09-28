@@ -1,11 +1,21 @@
 # Simple Form
 
-A complete form builder for all your needs
+<br>
 
-Modification from : https://github.com/tanmoy27112000/SimpleFormBuilder
+## Installing
+Add the following to your `pubspec.yaml` file:
+```yaml
+dependencies:
+  simple_form_arm: ^0.0.1
+```
 
 <br>
 
+
+A complete form builder for all your needs
+<br>
+Modification from : https://github.com/tanmoy27112000/SimpleFormBuilder
+```dart
 {
 "questionare": [
 {
@@ -50,5 +60,6 @@ Modification from : https://github.com/tanmoy27112000/SimpleFormBuilder
 ]
 
 }
+```
 
-</br>
+<br>
