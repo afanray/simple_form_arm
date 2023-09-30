@@ -104,6 +104,7 @@ class _FormBuilderState extends State<FormBuilder> {
                       InkWell(
                         onTap: () {
                           // print("Back");
+                          Navigator.pop(context);
                         },
                         child: Container(
                           height: 50,
