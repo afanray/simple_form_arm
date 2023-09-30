@@ -99,57 +99,29 @@ class _FormBuilderState extends State<FormBuilder> {
                 ),
                 Container(
                   padding: const EdgeInsets.all(10),
-                  child: Row(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          // print("Back");
-                          Navigator.pop(context);
-                        },
-                        child: Container(
-                          height: 50,
-                          width: MediaQuery.of(context).size.width * 0.4,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Colors.grey,
-                          ),
-                          child: Center(
-                            child: Text(
-                              widget.submitButtonText ?? "Cancel",
-                              style: widget.submitTextDecoration ??
-                                  const TextStyle(color: Colors.white),
-                            ),
-                          ),
+                  child: InkWell(
+                    onTap: () {
+                      widget.onSubmit(getCompleteData(
+                        context: context,
+                        index: widget.index,
+                        checklistModel: checklistModel,
+                      ));
+                    },
+                    child: Container(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.blue,
+                      ),
+                      child: Center(
+                        child: Text(
+                          widget.submitButtonText ?? "Submit",
+                          style: widget.submitTextDecoration ??
+                              const TextStyle(color: Colors.white),
                         ),
                       ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.1,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          widget.onSubmit(getCompleteData(
-                            context: context,
-                            index: widget.index,
-                            checklistModel: checklistModel,
-                          ));
-                        },
-                        child: Container(
-                          height: 50,
-                          width: MediaQuery.of(context).size.width * 0.4,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Colors.blue,
-                          ),
-                          child: Center(
-                            child: Text(
-                              widget.submitButtonText ?? "Submit",
-                              style: widget.submitTextDecoration ??
-                                  const TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 )
               ],
