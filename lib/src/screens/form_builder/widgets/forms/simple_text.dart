@@ -6,11 +6,7 @@ class _SimpleText extends StatelessWidget {
     required this.questions,
     this.checklistModel,
     required this.showIndex,
-    this.textImage,
-    this.remarkImage,
     required this.index,
-    required this.showIcon,
-    this.descriptionTextDecoration,
     this.textFieldWidth,
     this.textfieldDecoration,
   }) : super(key: key);
@@ -18,11 +14,7 @@ class _SimpleText extends StatelessWidget {
   final Question questions;
   final QuestionsModel? checklistModel;
   final bool showIndex;
-  final String? textImage;
-  final String? remarkImage;
   final int index;
-  final bool showIcon;
-  final TextStyle? descriptionTextDecoration;
   final double? textFieldWidth;
   final InputDecoration? textfieldDecoration;
 
@@ -36,7 +28,6 @@ class _SimpleText extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              showIcon ? IconContainer(icon: textImage) : Container(),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: Text(
@@ -51,9 +42,7 @@ class _SimpleText extends StatelessWidget {
             horizontal: 16,
           ),
           child: SizedBox(
-            width: screenWidth(
-                context: context,
-                mulBy: textFieldWidth ?? 0.9),
+            width: screenWidth(context: context, mulBy: textFieldWidth ?? 0.9),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.grey[300],
@@ -88,18 +77,6 @@ class _SimpleText extends StatelessWidget {
             ),
           ),
         ),
-        // Consumer<FormBuilderProvider>(
-        //   builder: ((context, value, child) {
-        //     return _RemarkWidget(
-        //       questions: questions,
-        //       remark: showIcon,
-        //       icon: remarkImage,
-        //       onChanged: (input) {
-        //         value.setRemark(questions, input, index);
-        //       },
-        //     );
-        //   }),
-        // ),
       ],
     );
   }

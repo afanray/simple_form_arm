@@ -6,21 +6,13 @@ class _SimpleDropdown extends StatelessWidget {
     required this.questions,
     required this.showIndex,
     required this.index,
-    required this.showIcon,
-    this.remarkImage,
     this.checklistModel,
-    this.dropdownImage,
-    this.descriptionTextDecoration,
   }) : super(key: key);
 
   final Question questions;
   final QuestionsModel? checklistModel;
   final bool showIndex;
-  final String? dropdownImage;
-  final String? remarkImage;
   final int index;
-  final bool showIcon;
-  final TextStyle? descriptionTextDecoration;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +24,6 @@ class _SimpleDropdown extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              showIcon ? IconContainer(icon: dropdownImage) : Container(),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: Text(
@@ -95,18 +86,6 @@ class _SimpleDropdown extends StatelessWidget {
             ),
           ),
         ),
-        // Consumer<FormBuilderProvider>(
-        //   builder: (context, value, child) {
-        //     return _RemarkWidget(
-        //       questions: questions,
-        //       remark: showIcon,
-        //       icon: remarkImage,
-        //       onChanged: (input) {
-        //         value.setRemark(questions, input, index);
-        //       },
-        //     );
-        //   },
-        // )
       ],
     );
   }

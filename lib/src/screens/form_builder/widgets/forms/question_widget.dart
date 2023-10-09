@@ -10,7 +10,7 @@ import 'package:simple_form_arm/src/shared/constant.dart';
 import 'package:simple_form_arm/src/shared/questionsModel.dart';
 import 'package:simple_form_arm/src/shared/utils/file_upload.dart';
 
-// part 'simple_checkbox.dart';
+part 'simple_checkbox.dart';
 part 'simple_date.dart';
 part 'simple_datetime.dart';
 part 'simple_dropdown.dart';
@@ -43,73 +43,39 @@ class QuestionWidget extends StatelessWidget {
       case "radio":
         return _SimpleMultiple(
           questions: questions,
-          showIcon: remarks,
           showIndex: widget.showIndex,
           index: widget.index,
           checklistModel: checklistModel,
-          descriptionTextDecoration: widget.descriptionTextDecoration,
-          multipleimage: widget.multipleimage,
-          titleTextDecoration: widget.titleTextDecoration,
-          remarkImage: widget.remarkImage,
         );
 
       case "checkbox":
-        return _SimpleMultiple(
+        return _SimpleCheckbox(
           questions: questions,
-          showIcon: remarks,
           showIndex: widget.showIndex,
           index: widget.index,
           checklistModel: checklistModel,
-          descriptionTextDecoration: widget.descriptionTextDecoration,
-          multipleimage: widget.multipleimage,
-          titleTextDecoration: widget.titleTextDecoration,
-          remarkImage: widget.remarkImage,
         );
 
-      // case "select":
-      //   return _SimpleMultiple(
-      //     questions: questions,
-      //     showIcon: remarks,
-      //     showIndex: widget.showIndex,
-      //     index: widget.index,
-      //     checklistModel: checklistModel,
-      //     descriptionTextDecoration: widget.descriptionTextDecoration,
-      //     multipleimage: widget.multipleimage,
-      //     titleTextDecoration: widget.titleTextDecoration,
-      //     remarkImage: widget.remarkImage,
-      //   );
       case "select":
         return _SimpleDropdown(
           questions: questions,
-          showIcon: remarks,
           showIndex: widget.showIndex,
-          remarkImage: widget.remarkImage,
           index: widget.index,
           checklistModel: checklistModel,
-          dropdownImage: widget.dropdownImage,
-          descriptionTextDecoration: widget.descriptionTextDecoration,
         );
       case "datetime":
         return _SimpleDateTime(
           questions: questions,
           checklistModel: checklistModel,
           showIndex: widget.showIndex,
-          dateImage: widget.dateImage,
-          remarkImage: widget.remarkImage,
           index: widget.index,
-          showIcon: remarks,
-          descriptionTextDecoration: widget.descriptionTextDecoration,
         );
       case "time":
         return _SimpleTime(
           questions: questions,
           checklistModel: checklistModel,
           showIndex: widget.showIndex,
-          dateImage: widget.dateImage,
-          remarkImage: widget.remarkImage,
           index: widget.index,
-          showIcon: remarks,
-          descriptionTextDecoration: widget.descriptionTextDecoration,
         );
 
       case "date":
@@ -117,21 +83,14 @@ class QuestionWidget extends StatelessWidget {
           questions: questions,
           checklistModel: checklistModel,
           showIndex: widget.showIndex,
-          dateImage: widget.dateImage,
-          remarkImage: widget.remarkImage,
           index: widget.index,
-          showIcon: remarks,
-          descriptionTextDecoration: widget.descriptionTextDecoration,
         );
       case "attachment":
         return _SimpleFile(
           questions: questions,
           checklistModel: checklistModel,
           showIndex: widget.showIndex,
-          remarkImage: widget.remarkImage,
           index: widget.index,
-          showIcon: remarks,
-          descriptionTextDecoration: widget.descriptionTextDecoration,
         );
 
       case "text":
@@ -139,11 +98,7 @@ class QuestionWidget extends StatelessWidget {
           questions: questions,
           checklistModel: checklistModel,
           showIndex: widget.showIndex,
-          textImage: widget.textImage,
-          remarkImage: widget.remarkImage,
           index: widget.index,
-          showIcon: remarks,
-          descriptionTextDecoration: widget.descriptionTextDecoration,
           textFieldWidth: widget.textFieldWidth,
           textfieldDecoration: widget.textfieldDecoration,
         );

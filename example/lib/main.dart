@@ -9,6 +9,44 @@ import 'package:simple_form_arm/src/shared/constant.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  List multipleSelected = [];
+  List checkListItems = [
+    {
+      "id": 0,
+      "value": false,
+      "title": "Sunday",
+    },
+    {
+      "id": 1,
+      "value": false,
+      "title": "Monday",
+    },
+    {
+      "id": 2,
+      "value": false,
+      "title": "Tuesday",
+    },
+    {
+      "id": 3,
+      "value": false,
+      "title": "Wednesday",
+    },
+    {
+      "id": 4,
+      "value": false,
+      "title": "Thursday",
+    },
+    {
+      "id": 5,
+      "value": false,
+      "title": "Friday",
+    },
+    {
+      "id": 6,
+      "value": false,
+      "title": "Saturday",
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,6 +58,34 @@ class MyApp extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
+              Column(
+                children: List.generate(
+                  checkListItems.length,
+                  (index) => CheckboxListTile(
+                    controlAffinity: ListTileControlAffinity.leading,
+                    contentPadding: EdgeInsets.zero,
+                    dense: true,
+                    title: Text(
+                      checkListItems[index]["title"],
+                      style: const TextStyle(
+                        fontSize: 16.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                    value: checkListItems[index]["value"],
+                    onChanged: (value) {
+                      // setState(() {
+                      //   checkListItems[index]["value"] = value;
+                      //   if (multipleSelected.contains(checkListItems[index])) {
+                      //     multipleSelected.remove(checkListItems[index]);
+                      //   } else {
+                      //     multipleSelected.add(checkListItems[index]);
+                      //   }
+                      // });
+                    },
+                  ),
+                ),
+              ),
               FormBuilder(
                 initialData: sampleData,
                 title: "Form title",

@@ -6,19 +6,13 @@ class _SimpleFile extends StatelessWidget {
     required this.questions,
     this.checklistModel,
     required this.showIndex,
-    this.remarkImage,
     required this.index,
-    required this.showIcon,
-    this.descriptionTextDecoration,
   }) : super(key: key);
 
   final Question questions;
   final QuestionsModel? checklistModel;
   final bool showIndex;
-  final String? remarkImage;
   final int index;
-  final bool showIcon;
-  final TextStyle? descriptionTextDecoration;
 
   @override
   Widget build(BuildContext context) {

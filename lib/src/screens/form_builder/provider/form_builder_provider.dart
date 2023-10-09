@@ -5,6 +5,7 @@ import '../../../shared/questionsModel.dart';
 
 class FormBuilderProvider extends ChangeNotifier {
   Map<String, dynamic> initial;
+  List multipleSelected = [];
 
   QuestionsModel? questionsModel;
   // ChecklistModel? checklistModel;
@@ -28,9 +29,9 @@ class FormBuilderProvider extends ChangeNotifier {
   //     {required Question questions, Object? value, required int index}) {
   //   final idx = questionsModel?.questions?.indexOf(questions);
   //   final question = questionsModel?.questions?[idx!];
-  //   question?.content = ;
+  //   question?.content = value;
 
-  // print(question?.answer);
+  //   print(question?.content);
 
   //   notifyListeners();
   // }
@@ -43,16 +44,25 @@ class FormBuilderProvider extends ChangeNotifier {
   //   notifyListeners();
   // }
 
-  void setCheckboxAnswers({
-    required Question questions,
-    bool? input,
-    required String checked,
-    required int index,
-  }) {
+  void setCheckboxAnswers(
+      {required Question questions,
+      bool? input,
+      required String? checked,
+      required int index,
+      Object? value}) {
     final idx = questionsModel?.questions?.indexOf(questions);
     final question = questionsModel?.questions?[idx!];
+
     question?.content[questions.answerOptions!
         .indexOf(questions.answerOptions!.elementAt(index))] = input;
+
+    if (input == false) {
+      multipleSelected.remove(checked);
+    } else {
+      multipleSelected.add(checked);
+    }
+
+    print(multipleSelected);
 
     notifyListeners();
   }
